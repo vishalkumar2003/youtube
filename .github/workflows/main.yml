@@ -2,8 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: read
@@ -18,16 +17,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: Build HTML
+      - name: Create public folder
         run: |
-          mkdir public
-          cp index.html public/index.html
+          mkdir -p public
+          echo "<h1>Hello from GitHub Pages!</h1>" > public/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
