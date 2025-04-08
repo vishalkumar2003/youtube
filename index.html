@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Player</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            height: 60px;
+            background-color: #1DB954;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            background-color: #1a1a1a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .player-container {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .album-art {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #333;
+            border-radius: 12px;
+            background-image: url('https://via.placeholder.com/500');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .track-info {
+            margin-top: 16px;
+        }
+
+        .track-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .artist-name {
+            color: #b3b3b3;
+            font-size: 16px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .controls button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background-color: #444;
+            border-radius: 2px;
+            margin: 12px 0;
+            position: relative;
+        }
+
+        .progress {
+            width: 35%;
+            height: 100%;
+            background-color: #1DB954;
+            border-radius: 2px;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #181818;
+            padding: 16px;
+            border-radius: 12px;
+        }
+
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .playlist-thumb {
+            width: 56px;
+            height: 56px;
+            background-color: #333;
+            border-radius: 8px;
+            margin-right: 12px;
+        }
+
+        .playlist-text {
+            flex: 1;
+        }
+
+        .playlist-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .playlist-artist {
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+
+        @media (max-width: 800px) {
+            main {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Spotify</div>
+        <div class="user-avatar">U</div>
+    </header>
+
+    <main>
+        <div class="player-container">
+            <div class="album-art"></div>
+
+            <div class="track-info">
+                <div class="track-title">Lost in the Echo</div>
+                <div class="artist-name">Linkin Park</div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+
+            <div class="controls">
+                <button>⏮️</button>
+                <button style="font-size: 36px;">⏯️</button>
+                <button>⏭️</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="playlist-item">
+                <div class="playlist-thumb"
+                    style="background-image: url('https://via.placeholder.com/100'); background-size: cover;"></div>
+                <div class="playlist-text">
+                    <div class="playlist-title">Blinding Lights</div>
+                    <div class="playlist-artist">The Weeknd</div>
+                </div>
+            </div>
+
+            <div class="playlist-item">
+                <div class="playlist-thumb"
+                    style="background-image: url('https://via.placeholder.com/100'); background-size: cover;"></div>
+                <div class="playlist-text">
+                    <div class="playlist-title">Good 4 U</div>
+                    <div class="playlist-artist">Olivia Rodrigo</div>
+                </div>
+            </div>
+
+            <div class="playlist-item">
+                <div class="playlist-thumb"
+                    style="background-image: url('https://via.placeholder.com/100'); background-size: cover;"></div>
+                <div class="playlist-text">
+                    <div class="playlist-title">Stay</div>
+                    <div class="playlist-artist">The Kid LAROI, Justin Bieber</div>
+                </div>
+            </div>
+
+            <div class="playlist-item">
+                <div class="playlist-thumb"
+                    style="background-image: url('https://via.placeholder.com/100'); background-size: cover;"></div>
+                <div class="playlist-text">
+                    <div class="playlist-title">Heat Waves</div>
+                    <div class="playlist-artist">Glass Animals</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
